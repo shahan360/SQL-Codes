@@ -1,0 +1,1 @@
+select * from film; -- select all columns from film table
