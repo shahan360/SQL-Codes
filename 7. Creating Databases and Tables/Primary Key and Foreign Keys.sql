@@ -1,5 +1,6 @@
 --Data Types in PostgreSQL
 --Refer below link for data types available in PostgreSQL
+--https://www.postgresql.org/docs/current/datatype.html
 
 --Primary Keys and Foreign Keys
 --Primary Key:
