@@ -71,6 +71,6 @@ The unique ID of Jonathan is 1.
 
 -- Write your PostgreSQL query statement below
 -- select * from Employees;
-select unique_id,name from EmployeeUNI
-right join Employees
-on EmployeeUNI.id = Employees.id
+SELECT EmployeeUNI.unique_id, Employees.name 
+FROM Employees LEFT JOIN EmployeeUNI -- LEFT JOIN as the Employees table is on the left and we want all the rows from the Employees table
+ON Employees.id = EmployeeUNI.id;

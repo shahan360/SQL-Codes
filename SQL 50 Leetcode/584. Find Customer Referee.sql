@@ -47,4 +47,4 @@ Output:
 
 -- Write your PostgreSQL query statement below
 select name from Customer
-where referee_id!=2 or referee_id is null ;
+where referee_id!=2 or referee_id is null ; -- We must also consider null values so we are keeping or referee_id is null.
