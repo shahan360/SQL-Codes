@@ -98,3 +98,12 @@ FROM (
 -- Group the results by machine_id to get the average processing time for each machine
 GROUP BY 
     machine_id;
+
+-- Solution 2
+SELECT a1.machine_id, ROUND(CAST(SUM(a2.timestamp - a1.timestamp) AS NUMERIC) / COUNT(*), 3) AS processing_time
+FROM Activity a1
+INNER JOIN Activity a2
+ON a1.machine_id = a2.machine_id 
+AND a1.process_Id = a2.process_id 
+AND a1.timestamp < a2.timestamp
+GROUP BY a1.machine_id;
