@@ -65,6 +65,7 @@ Output:
 
 -- Write your PostgreSQL query statement below
 
-select Employee.name, Bonus.bonus
-from Employee LEFT Join Bonus ON Employee.empId = Bonus.empId -- Using left join to show all the other values from name column of employee table.
-WHERE Bonus.bonus < 1000 OR Bonus.bonus is null;
+-- Write your PostgreSQL query statement below
+SELECT Employee.name, Bonus.bonus
+FROM Employee LEFT Join Bonus ON Employee.empId = Bonus.empId -- Using left join to show all the other values from name column of employee table.
+WHERE Bonus.bonus < 1000 OR Bonus.bonus IS NULL;
