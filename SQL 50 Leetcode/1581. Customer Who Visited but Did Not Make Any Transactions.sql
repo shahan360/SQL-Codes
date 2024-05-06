@@ -75,7 +75,9 @@ As we can see, users with IDs 30 and 96 visited the mall one time without making
 """
 
 -- Write your PostgreSQL query statement below
-select customer_id,count(Visits.visit_id) as count_no_trans from Visits
--- here we are using filter NOT IN and filter clause as a subquery
-where Visits.visit_id not in (select distinct(visit_id) from Transactions)
-group by customer_id;
+SELECT customer_id, COUNT(Visits.visit_id) AS count_no_trans 
+FROM Visits LEFT JOIN Transactions 
+ON Visits.visit_id = Transactions.visit_id
+WHERE transaction_id IS NULL -- filter for where the transaction_id is NULL
+GROUP BY customer_id 
+ORDER BY COUNT(Visits.visit_id) ASC;

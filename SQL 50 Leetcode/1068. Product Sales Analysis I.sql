@@ -70,6 +70,8 @@ From sale_id = 7, we can conclude that Apple was sold for 9000 in the year 2011.
 """
 
 -- Write your PostgreSQL query statement below
-select product_name,year,price from Sales
-inner join Product 
-on Sales.product_id = Product.product_id
+SELECT product_name, year, price 
+FROM Sales INNER JOIN Product -- We can use INNER JOIN because we want only the rows that are common in both tables to each sale_id in the Sales table
+ON Sales.product_id = Product.product_id; 
+
+-- NOTE: We can also use LEFT JOIN as the Sales table is on the left and we want all the rows from the Sales table for each sale_id in the Sales table
