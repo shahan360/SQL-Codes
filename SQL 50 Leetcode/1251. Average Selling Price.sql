@@ -74,7 +74,7 @@ Average selling price for product 2 = ((200 * 15) + (30 * 30)) / 230 = 16.96
 
 SELECT 
     p.product_id, -- Select the product_id column from the Prices table
-    ROUND(SUM(p.price * u.units) / SUM(u.units)::numeric, 2) AS average_price -- Calculate the average price by summing the price multiplied by units sold,
+    COALESCE(ROUND(SUM(p.price * u.units) / SUM(u.units)::numeric, 2), 0) AS average_price -- Calculate the average price by summing the price multiplied by units sold,
                                                                               -- dividing by the total units sold, and rounding the result to two decimal places
 FROM 
     Prices p -- Select from the Prices table
