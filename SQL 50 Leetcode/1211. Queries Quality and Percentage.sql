@@ -62,15 +62,19 @@ Cat queries quality equals ((2 / 5) + (3 / 3) + (4 / 7)) / 3 = 0.66
 Cat queries poor_ query_percentage is (1 / 3) * 100 = 33.33
 """
 
--- This SQL query calculates the quality and the percentage of poor queries for each query name.
+-- This SQL query calculates the quality and the percentage of poor queries for each distinct query name.
 
 SELECT 
-    query_name, -- Select the query_name column from the Queries table
-    ROUND(AVG(rating / position::numeric), 2) AS quality, -- Calculate the average quality by dividing the rating by the position for each query,
+    query_name, -- Select the query_name column
+    ROUND(AVG(rating / position::numeric), 2) AS quality, -- Calculate the average quality by dividing the rating by the position,
                                                           -- and rounding the result to two decimal places
-    ROUND(AVG(CASE WHEN rating < 3 THEN 1 ELSE 0 END) * 100::numeric, 2) AS poor_query_percentage -- Calculate the percentage of poor queries by counting the cases where the rating is less than 3,
-                                                                                                    -- converting it to a percentage, and rounding to two decimal places
+    ROUND(AVG(CASE WHEN rating < 3 THEN 1 ELSE 0 END) * 100::numeric, 2) AS poor_query_percentage -- Calculate the percentage of poor queries by counting the queries with a rating less than 3,
+                                                                                                 -- multiplying by 100 to convert it to a percentage,
+                                                                                                 -- and rounding the result to two decimal places
 FROM 
     Queries -- Select from the Queries table
+WHERE 
+    query_name IS NOT NULL -- Filter out rows where the query_name is not null
 GROUP BY 
-    query_name; -- Group the result by query_name to calculate the quality and percentage for each query
+    query_name; -- Group the result by query_name to calculate quality and poor query percentage for each distinct query name
+
