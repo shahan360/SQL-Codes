@@ -11,7 +11,7 @@
 --FROM another_table
 --WHERE condition;
 --NOTE: The inserted row values must match up for the table, including constraints.
---SERIAL columns do not need to be provided a value.
+--SERIAL columns do not need to be provided a value. As it is a sequence so it is automatically going to get updated.
 
 SELECT * from account;
 
@@ -40,4 +40,4 @@ SELECT * FROM account_job;
 Below command with throw error due to foreign key constraint
 INSERT INTO account_job(user_id,job_id,hire_date)
 VALUES
-	(1,1,CURRENT_TIMESTAMP);	
+	(10,10,CURRENT_TIMESTAMP);	
