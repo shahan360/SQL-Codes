@@ -81,3 +81,11 @@ ON Visits.visit_id = Transactions.visit_id
 WHERE transaction_id IS NULL -- filter for where the transaction_id is NULL
 GROUP BY customer_id 
 ORDER BY COUNT(Visits.visit_id) ASC;
+
+-- Solution 2
+SELECT customer_id, COUNT(customer_id) AS count_no_trans 
+FROM Visits v LEFT JOIN Transactions t
+ON v.visit_id = t.visit_id
+WHERE transaction_id IS null
+GROUP BY customer_id
+ORDER BY customer_id;
