@@ -1,1 +1,0 @@
-select distinct(rental_rate) from film;
