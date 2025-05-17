@@ -33,4 +33,39 @@ SELECT * FROM char_varchar_example;
 -- -- The CHAR type is defined with a length of 10, meaning it can store strings up to 10 characters long.
 -- -- The VARCHAR type is defined with a length of 50, meaning it can store strings up to 50 characters long.
 -- -- The CHAR type is a fixed-length string data type, while the VARCHAR type is a variable-length string data type.
--- -- The CHAR type is used for strings of a fixed length, while the VARCHAR type is used for strings of variable length.
+-- -- The CHAR type is used for strings of a fixed length, while the VARCHAR type is used for strings of variable length.-- Below are the SQL statements to show the difference between CHAR and VARCHAR data types in MySQL.
+
+-----------------------------------
+
+-- The CHAR type is a fixed-length string data type, while the VARCHAR type is a variable-length string data type.
+-- The CHAR type is used for strings of a fixed length, while the VARCHAR type is used for strings of variable length.
+-- The CHAR type is often used for strings that are always the same length, such as postal codes or fixed-length identifiers.
+-- The VARCHAR type is often used for strings that can vary in length, such as names or descriptions.
+
+-- Create a table with CHAR and VARCHAR columns
+CREATE TABLE char_varchar_example (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fixed_length CHAR(10) NOT NULL,
+    variable_length VARCHAR(50) NOT NULL
+);
+
+-- Insert some values into the table
+INSERT INTO char_varchar_example (fixed_length, variable_length) 
+VALUES 
+('1234567890', 'Hello, World!'),
+('ABCDEFGHIJ', 'MySQL is great!'),
+('1234', 'This is a test.'),
+('A', 'Short string.'),
+('1234567890', 'This string is longer than the fixed length.');
+
+-- Select all values from the table
+SELECT 
+    id,
+    fixed_length,
+    LENGTH(fixed_length) AS fixed_length_length,
+    variable_length,
+    LENGTH(variable_length) AS variable_length_length
+FROM char_varchar_example;
+
+-- Drop the table
+DROP TABLE IF EXISTS char_varchar_example;
