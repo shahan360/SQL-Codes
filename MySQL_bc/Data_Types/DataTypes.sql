@@ -1,0 +1,51 @@
+-- Below is the link for the MySQL documentation for data types
+https://dev.mysql.com/doc/refman/8.0/en/data-types.html
+
+-- The CHAR and VARCHAR types are both used to store character strings.
+-- The main difference between them is how they store the data.
+-- CHAR is a fixed-length data type, meaning that it always uses the same amount of space, regardless of the actual length of the string.
+-- VARCHAR is a variable-length data type, meaning that it only uses as much space as needed to store the string.
+-- This can lead to more efficient storage, especially for strings of varying lengths.
+-- CHAR is best used for strings that are always the same length, such as country codes or postal codes.
+-- VARCHAR is best used for strings that can vary in length, such as names or addresses.
+-- The maximum length of a CHAR string is 255 characters, while the maximum length of a VARCHAR string is 65,535 characters.
+-- However, the maximum length of a VARCHAR string is also limited by the maximum row size of 65,535 bytes.
+-- This means that if you have a lot of other columns in your table, the maximum length of a VARCHAR string may be less than 65,535 characters.
+-- In addition, the maximum length of a VARCHAR string is also limited by the character set used.
+-- For example, if you are using the utf8mb4 character set, the maximum length of a VARCHAR string is 16,383 characters.
+-- The CHAR and VARCHAR types can also be used with the BINARY and VARBINARY types to store binary data.
+-- The BINARY type is a fixed-length data type, while the VARBINARY type is a variable-length data type.
+-- The BINARY and VARBINARY types are similar to the CHAR and VARCHAR types, but they are used to store binary data instead of character strings.
+-- The BINARY and VARBINARY types can also be used with the same maximum lengths as the CHAR and VARCHAR types.
+-- The BINARY type is best used for binary data that is always the same length, such as image files or audio files.
+-- The VARBINARY type is best used for binary data that can vary in length, such as files or documents.
+-- The CHAR and VARCHAR types can also be used with the BLOB and TEXT types to store large amounts of data.
+-- The BLOB type is a binary large object, while the TEXT type is a large text object.
+-- The BLOB and TEXT types are similar to the BINARY and VARBINARY types, but they are used to store large amounts of data instead of fixed-length or variable-length data.
+-- The BLOB and TEXT types can also be used with the same maximum lengths as the CHAR and VARCHAR types.
+-- The BLOB type is best used for large binary data, such as images or audio files.
+-- The TEXT type is best used for large text data, such as documents or web pages.
+-- The CHAR and VARCHAR types can also be used with the ENUM and SET types to store enumerated values.
+-- The ENUM type is a string object that can have only one value, chosen from a list of allowed values.
+-- The SET type is a string object that can have zero or more values, chosen from a list of allowed values.
+-- The ENUM and SET types are similar to the CHAR and VARCHAR types, but they are used to store enumerated values instead of character strings.
+-- The ENUM and SET types can also be used with the same maximum lengths as the CHAR and VARCHAR types.
+-- The ENUM type is best used for enumerated values that can only have one value from a list, such as status codes or categories.
+-- The SET type is best used for enumerated values that can have zero or more values from a list, such as tags or labels.
+-- The CHAR and VARCHAR types can also be used with the JSON type to store JSON data.
+-- The JSON type is a data type that can store JSON data in a structured format.
+-- The JSON type is similar to the CHAR and VARCHAR types, but it is used to store JSON data instead of character strings.
+-- The JSON type can also be used with the same maximum lengths as the CHAR and VARCHAR types.
+-- The JSON type is best used for JSON data that can be structured, such as API responses or configuration files.
+-- The CHAR and VARCHAR types can also be used with the DATE, TIME, and DATETIME types to store date and time data.
+-- The DATE type is a date object that can store date data in a structured format.
+-- The TIME type is a time object that can store time data in a structured format.
+-- The DATETIME type is a date and time object that can store date and time data in a structured format.
+-- The DATE, TIME, and DATETIME types are similar to the CHAR and VARCHAR types, but they are used to store date and time data instead of character strings.
+-- The DATE, TIME, and DATETIME types can also be used with the same maximum lengths as the CHAR and VARCHAR types.
+-- The DATE type is best used for date data that can be structured, such as birthdays or anniversaries.
+-- The TIME type is best used for time data that can be structured, such as start times or end times.
+-- The DATETIME type is best used for date and time data that can be structured, such as timestamps or logs.
+-- The CHAR and VARCHAR types can also be used with the TIMEZONE type to store timezone data.
+-- The TIMEZONE type is a data type that can store timezone data in a structured format.
+-- The TIMEZONE type is similar to the CHAR and VARCHAR types, but it is used to store timezone data instead of character strings.  
