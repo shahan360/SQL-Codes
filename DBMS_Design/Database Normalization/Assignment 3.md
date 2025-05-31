@@ -1,8 +1,8 @@
+Use the following table for all questions.
 
 
 
-
-Describe a situation that could lead to an update anomaly.
+1. Describe a situation that could lead to an update anomaly.
 
 Some of the update anomalies I identified are:
 
@@ -10,15 +10,15 @@ Updating the advisor - Mr. Jones is in two rows.
 
 Updating the Classes - For example, Physics and Art are listed several times.
 
-How could an insert anomaly occur with this table?
+2. How could an insert anomaly occur with this table?
 
 An advisor is hired, but hasn't been assigned any students.
 
-When could a deletion anomaly affect the table?
+3. When could a deletion anomaly affect the table?
 
 If Ms. Jackson retired, and we remove her from the table, the Jack Knowles is removed as well.
 
-The above table isn’t normalized.  Describe changes would you make to the table to adopt it to 1st normal form.
+4. The above table isn’t normalized.  Describe changes would you make to the table to adopt it to 1st normal form.
 
 The changes I would make are:
 
