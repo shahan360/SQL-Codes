@@ -1,0 +1,2 @@
+###What is a Common Table Expression (CTE)?
+A Common Table Expression (CTE) in SQL is a temporary, named result set that you define within a query using the WITH keyword. Think of it as a way to create a "virtual table" that only exists while your query is running. You can use this virtual table just like a regular table in your main query, but it disappears after the query finishes
